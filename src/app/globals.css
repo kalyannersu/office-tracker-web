@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FAFAFA;
+  --fg: #0A0A0B;
+  --muted: #5A5A60;
+  --line: rgba(0,0,0,0.08);
+  --accent: #007AFF;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0A0A0B;
+    --fg: #FAFAFA;
+    --muted: #9A9AA0;
+    --line: rgba(255,255,255,0.10);
+    --accent: #0A84FF;
+  }
+}
+
+html, body { background: var(--bg); color: var(--fg); }
+
+.prose-body :where(p, ul, ol) { margin: 0 0 1rem 0; line-height: 1.65; color: var(--fg); }
+.prose-body :where(h2) { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+.prose-body :where(h3) { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+.prose-body :where(ul, ol) { padding-left: 1.25rem; }
+.prose-body :where(li) { margin-bottom: 0.35rem; }
+.prose-body :where(a) { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.prose-body :where(strong) { font-weight: 600; }
+.prose-body :where(hr) { border-color: var(--line); margin: 2rem 0; }
